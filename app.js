@@ -137,7 +137,7 @@ function updateCardState(category) {
 
       data.forEach(item => {
         const card = $('<div class="card"></div>').attr('data-id', item.id);
-        const cardImage = $('<img>').attr('src', item.image_url);
+        const cardImage = $('<img>').attr('src', item.image_url).attr('class','cover');
         
         // 创建包含标题和简要说明的 div 元素
         const cardContent = $('<div class="card-content"></div>');

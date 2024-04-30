@@ -169,3 +169,9 @@
     transform: translateY(-5px); /* 在垂直方向上向上移动5像素 */
     transition: transform 0.1s, box-shadow 0.1s; /* 添加过渡效果 */
 }
+
+.cover {
+  width: 300px;
+  height: 100%; /* 設置容器的高度 */
+  object-fit: contain; 
+}
