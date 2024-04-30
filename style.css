@@ -1,0 +1,171 @@
+.self-introduction{
+    text-align: center;
+}
+
+/* 其他樣式省略 */
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+    grid-gap: 20px;
+  }
+  
+  .card {
+    position: relative;
+    cursor: pointer;
+  }
+
+  .card img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+
+  .card-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    /* background-color: rgba(0, 0, 0, 0.7); */
+    /* display: flex; */
+    /* flex-direction: column; 垂直排列 */
+  }
+  
+  .card-label, .card-title{
+    margin-top: auto; /* 将标题和简要说明推到顶部 */
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    display: inline-block; 
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  .card-label{
+    font-weight: 500;
+  }
+
+  .card-title {
+    display: none;
+    font-style: italic;
+    /* margin-bottom: 5px; */
+  }
+  
+  .card:hover {
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.7); /* 添加阴影效果 */
+    transform: translateY(-5px); /* 在垂直方向上向上移动5像素 */
+    transition: transform 0.3s, box-shadow 0.3s; /* 添加过渡效果 */
+  }
+
+  .card:hover .card-title {
+    display: block; 
+  }
+
+  
+ 
+
+
+
+
+  /* 其他樣式省略 */
+
+  /* 模態框樣式 */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    position: relative;
+  }
+  
+  /* 關閉按鈕樣式 */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+
+  /* 按鈕 */
+  .btn-group {
+    margin-bottom: 20px;
+  }
+  
+  .btn {
+    background-color: #f1f1f1;
+    border: none;
+    color: #333;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 5px 5px; /* 添加左右间距 */
+    border-radius: 20px;
+  }
+  
+  
+
+  .btn.active {
+    background-color: #333;
+    color: #fff;
+  }
+
+  .btn:hover{
+    background-color: #aaa;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.7); /* 添加阴影效果 */
+    transform: translateY(-3px); /* 在垂直方向上向上移动5像素 */
+    transition: transform 0.2s, box-shadow 0.2s; /* 添加过渡效果 */
+  }
+
+
+  .modal-label{
+    background-color: #000;
+    color: #fff;
+    display: inline-block;
+    
+  }
+
+  .modal-title {
+    margin-top: 0; /* 或者調整為負值以拉近與 .modal-label 元素之間的距離 */
+}
+
+.modal-credit {
+    background-color: #ccc;
+    color: #333;
+    padding: 3px 10px;
+    margin-right: 5px;
+    margin-bottom: 5px; /* 增加垂直間距 */
+    border-radius: 3px;
+    display: inline-block;
+}
+
+.modal-image:hover{
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.7); /* 添加阴影效果 */
+    transform: translateY(-5px); /* 在垂直方向上向上移动5像素 */
+    transition: transform 0.1s, box-shadow 0.1s; /* 添加过渡效果 */
+}
