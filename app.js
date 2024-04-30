@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    // 從 Google Spreadsheet 獲取資料
+
     Papa.parse('https://docs.google.com/spreadsheets/d/e/2PACX-1vRpRXbF-Qp737S3qVOAlxVxzeKn6UYCS6M3qTxkqpd81XZ5b-EbFndsmlrDUQh3RxgULOT8HHePA2HV/pub?output=csv', {
         download: true,
         header: true,
@@ -14,11 +14,11 @@ $(document).ready(function() {
     const cardGrid = $('.card-grid');
     const btnGroup = $('.btn-group');
 
-    // 獲取所有不同的分類
+    // 獲取所有分類
     const categories = new Set(data.flatMap(item => item.category.split(',').map(c => c.trim())));
     const categories_2 = new Set(data.flatMap(item => item.category_2.split(',').map(c => c.trim())));
 
-    // 添加 All 按钮
+    // All按钮
     const allBtn = $('<button></button>')
     .addClass('btn btn-category active')
     .text('All')
@@ -33,7 +33,7 @@ $(document).ready(function() {
         .addClass('btn btn-category')
         .text(category)
         .attr('data-category', category)
-        .click(toggleCategory); // 修改此處的點擊事件綁定函數
+        .click(toggleCategory); 
 
       btnGroup.append(btn);
     });
@@ -45,25 +45,25 @@ $(document).ready(function() {
           .addClass('btn btn-category')
           .text(category)
           .attr('data-category', category)
-          .click(toggleCategory); // 修改此處的點擊事件綁定函數
+          .click(toggleCategory); 
   
         btnGroup.append(btn);
       });
 
-    // 初始化時顯示所有卡片
+    // 初始化
     showAllCards(data);
 
     
 
 
-  // 按鈕點擊事件處理函數
+  // 按鈕點擊事件
 function toggleCategory() {
     const category = $(this).data('category');
     $(this).toggleClass('active');
     updateCardState(category);
   }
 
-  // All 按钮点击事件处理函数
+  // All按鈕點擊事件
 function toggleAll() {
     const allBtn = $(this);
     const isActive = allBtn.hasClass('active');
@@ -88,7 +88,7 @@ function toggleAll() {
     }
   });
   
-// 更新卡片状态
+
 function updateCardState(category) {
     const allBtn = $('.btn-category[data-category="all"]');
     const isAllActive = allBtn.hasClass('active');
@@ -130,7 +130,6 @@ function updateCardState(category) {
 
 
 
-  
     // 顯示所有卡片
     function showAllCards(data) {
       cardGrid.empty();
@@ -139,23 +138,16 @@ function updateCardState(category) {
         const card = $('<div class="card"></div>').attr('data-id', item.id);
         const cardImage = $('<img>').attr('src', item.image_url).attr('class','cover');
         
-        // 创建包含标题和简要说明的 div 元素
+        // 包含label和title
         const cardContent = $('<div class="card-content"></div>');
 
         const cardLable = $('<div class="card-label"></div>').text(item.label);
         cardContent.append(cardLable);
         cardContent.append('<br>');
 
-        // 创建标题元素并添加到 cardContent 中
         const cardTitle = $('<div class="card-title"></div>').text(item.title);
         cardContent.append(cardTitle);
-        // cardContent.append('<br>');
-
-        // // 创建简要说明元素并添加到 cardContent 中
-        // const cardBriefing = $('<div class="card-briefing"></div>').text(item.briefing);
-        // cardContent.append(cardBriefing);
-
-        // 将 cardContent 添加到卡片中
+        
         card.append(cardContent);
         
         
@@ -165,10 +157,10 @@ function updateCardState(category) {
 
 
         cardCategories.forEach(category => {
-          card.attr('data-category-' + category, 'true'); // 添加多選類別的屬性
+          card.attr('data-category-' + category, 'true'); // 多選
         });
         cardCategories_2.forEach(category => {
-            card.attr('data-category-' + category, 'true'); // 添加多選類別的屬性
+            card.attr('data-category-' + category, 'true'); 
           });
 
 
@@ -182,7 +174,7 @@ function updateCardState(category) {
     }
   }
 
-  // 顯示彈窗
+  // 彈窗
   function showModal(item) {
     const modal = $('.modal');
     const modalLabel = $('.modal-label');
@@ -206,12 +198,10 @@ function updateCardState(category) {
     // 清空原有的 credits
     modalCredits.empty();
 
-    // 將 credits 拆分成陣列並處理每個關鍵字
+
     const creditsArray = item.credits.split(',');
     creditsArray.forEach(keyword => {
-        // 創建一個 <span> 元素並設置樣式類別
         const creditSpan = $('<span></span>').addClass('modal-credit').text(keyword.trim());
-        // 添加到 modalCredits 中
         modalCredits.append(creditSpan);
     });
 
