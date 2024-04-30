@@ -5,17 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Haohsiang Ko's Portfolio</title>
   <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
    
-    <h1 align="center">Haohsiang Ko's Portfolio</h1>
+    <h1 align="center" class="dm-serif-text-regular">Haohsiang Ko's Portfolio</h1>
     <!-- <h6 align="center">Uncovering insights from data, seeking perspectives from professionals, and guiding readers to understand the world.</h3> -->
-    <p class="self-introduction">Hello World! I am <b>Haohsiang Ko</b>, <b>Head of Data Journalism Team of <i>The Reporter</i></b> in Taipei, Taiwan. </p>
-    <p class="self-introduction">You can contact me via: <a href="mailto:haohsiang0509@gmail.com">haohsiang0509@gmail.com</a> and <a href="https://twitter.com/haohsiang0509" target="_blank">X(@haohsiang0509)</a></p>
+    <p class="self-introduction noto-serif-content">Hello World! I am <b class="highlight">Haohsiang Ko</b>, <b class="highlight">Head of Data Journalism Team of <a href="https://www.twreporter.org/" target="_blank">The Reporter</a></b> in Taipei, Taiwan. </p>
+    <p class="self-introduction noto-serif-content">You can contact me via: <a href="mailto:haohsiang0509@gmail.com" class="url">haohsiang0509@gmail.com</a> and <a href="https://twitter.com/haohsiang0509" target="_blank" class="url">X(@haohsiang0509)</a></p>
     <br>
-    <p class="self-introduction">Previously: Central News Agency Media Lab, Beijing Data-viz Inc. and Agriharvest Media</p>
-    <p class="self-introduction">Alumnus of National Chengchi University Journalism Department</p>
-
+    <p class="self-introduction noto-serif-content">Previously: Central News Agency Media Lab, Beijing Data-viz Inc. and Agriharvest Media</p>
+    <p class="self-introduction noto-serif-content">Alumnus of National Chengchi University Journalism Department</p>
+    <br>
     <div class="btn-group" align="center">
       <!-- 其他分類按鈕將在這裡動態生成 -->
       </div>
@@ -28,16 +32,17 @@
     <div class="modal-content">
       <span class="close">&times;</span>
       <h5 class="modal-label"></h5>
-      <h2 class="modal-title"></h2>
+      <h2 class="modal-title dm-serif-text-regular-italic"></h2>
       <!-- <h5 class="modal-media"></h5> -->
       <h5 class="modal-date"></h5>
+      <div class="modal-categories"></div>
       <img class="modal-image" src="" alt="" width="100%" height="auto">
       <br><br>
       <h4>Briefing:</h4>
       <div class="modal-briefing"></div>
       <div class="modal-description"></div>
       <i><div class="modal-honor"></div></i>
-      <h4>My Credits:</h4>
+      <h4 class="my-credits-title">My Credits:</h4>
     <div class="modal-credits"></div>
     </div>
   </div>

@@ -26,6 +26,14 @@ $(document).ready(function() {
     .click(toggleAll);
     btnGroup.append(allBtn);
 
+    // Honor按钮
+    const honorBtn = $('<button></button>')
+    .addClass('btn btn-category')
+    .text('Honor')
+    .attr('data-category', 'honor')
+    .click(toggleHonor);
+    btnGroup.append(honorBtn);
+    
     btnGroup.append("<br>")
 
     categories.forEach(category => {
@@ -74,6 +82,18 @@ function toggleAll() {
     }
     updateCardState();
 }
+
+// Honor按鈕點擊事件
+function toggleHonor() {
+  const honorBtn = $(this);
+  const isActive = honorBtn.hasClass('active');
+  if (isActive) {
+      honorBtn.removeClass('active');
+  } else {
+      honorBtn.addClass('active');
+  }
+  updateCardState();
+}
   
   
   // 初始化按鈕狀態並顯示卡片
@@ -119,6 +139,13 @@ function updateCardState(category) {
             });
         }
 
+        // Honor
+        const isHonorActive = $('.btn-category[data-category="honor"]').hasClass('active');
+        const cardHasHonorCategory = card.attr('data-category-honor') === 'true';
+        if (isHonorActive && cardHasHonorCategory) {
+            shouldShow = true;
+        }
+
         if (shouldShow) {
             card.show();
             // console.log(shouldShow);
@@ -153,6 +180,7 @@ function updateCardState(category) {
         
         const cardCategories = item.category.replace(/ /g, "-").split(',').map(c => c.trim());
         const cardCategories_2 = item.category_2.replace(/ /g, "-").split(',').map(c => c.trim());
+        const cardCategories_honor = item.category_honor.replace(/ /g, "-").split(',').map(c => c.trim());
 
 
 
@@ -160,6 +188,9 @@ function updateCardState(category) {
           card.attr('data-category-' + category, 'true'); // 多選
         });
         cardCategories_2.forEach(category => {
+            card.attr('data-category-' + category, 'true'); 
+          });
+        cardCategories_honor.forEach(category => {
             card.attr('data-category-' + category, 'true'); 
           });
 
@@ -185,6 +216,7 @@ function updateCardState(category) {
     const modalDescription = $('.modal-description');
     const modalHonor = $('.modal-honor');
     const modalCredits = $('.modal-credits');
+    const modalCategories = $('.modal-categories');
 
     modalLabel.text(item.label);
     modalTitle.text(item.title);
@@ -201,11 +233,23 @@ function updateCardState(category) {
 
     const creditsArray = item.credits.split(',');
     creditsArray.forEach(keyword => {
-        const creditSpan = $('<span></span>').addClass('modal-credit').text(keyword.trim());
+        const creditSpan = $('<span></span>').addClass('modal-credit').text(keyword.trim()); //單數
         modalCredits.append(creditSpan);
     });
 
+
+    // categories label
+    modalCategories.empty();
+
+    const modalCategoriesArray = item.category.split(',').concat(item.category_2.split(','));
+    modalCategoriesArray.forEach(keyword => {
+        const categorySpan = $('<span></span>').addClass('modal-category').text(keyword.trim()); //單數，避免css吃到父層
+        modalCategories.append(categorySpan);
+    });
+
+
     modal.css('display', 'block');
+
   }
 
   // 關閉彈窗

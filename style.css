@@ -1,3 +1,37 @@
+.dm-serif-text-regular {
+  font-family: "DM Serif Text", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.dm-serif-text-regular-italic {
+  font-family: "DM Serif Text", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+ /* <uniquifier>: Use a unique and descriptive class name
+ <weight>: Use a value from 100 to 900 */
+
+.noto-serif-content {
+  font-family: "Noto Serif", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:  "wdth" 100;
+}
+
+.highlight{
+  background-color: #FFB5B5;
+  color: black;
+  margin: 2px 2px 2px 2px;
+}
+
+.url{
+  color: #3C3C3C;
+}
+
+
 .self-introduction{
     text-align: center;
 }
@@ -16,8 +50,9 @@
 
   .card img {
     width: 100%;
-    height: auto;
+    height: 331px;
     display: block;
+    object-fit: cover; 
   }
 
 
@@ -93,21 +128,21 @@
   }
 
   .btn-group {
-    margin-bottom: 20px;
+    margin-bottom: 16px;
   }
   
   .btn {
     background-color: #f1f1f1;
     border: none;
     color: #333;
-    padding: 10px 20px;
+    padding: 5px 10px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    margin: 5px 5px; 
+    margin: 3px 3px; 
     border-radius: 20px;
   }
   
@@ -130,6 +165,7 @@
     background-color: #000;
     color: #fff;
     display: inline-block;
+    padding: 5px;
     
   }
 
@@ -138,13 +174,15 @@
 }
 
 .modal-credit {
-    background-color: #ccc;
-    color: #333;
-    padding: 3px 10px;
-    margin-right: 5px;
-    margin-bottom: 5px; 
-    border-radius: 3px;
-    display: inline-block;
+  font-size: 14px;
+  background-color: #ccc;
+  color: #333;
+  padding: 3px 10px;
+  margin: 2px 2px 2px 2px;
+  /* margin-right: 1px;
+  margin-bottom: 1px;  */
+  border-radius: 5px;
+  display: inline-block;
 }
 
 .modal-image:hover{
@@ -153,8 +191,23 @@
     transition: transform 0.1s, box-shadow 0.1s; 
 }
 
-.cover {
-  width: 300px;
-  height: 100%; 
-  object-fit: contain; 
+.modal-category {
+  font-size: 14px;
+  background-color: #333;
+  color: #fff;
+  padding: 3px 10px;
+  margin: 2px 2px 2px 2px;
+  /* margin-right: 1px;
+  margin-bottom: 1px;  */
+  border-radius: 5px;
+  display: inline-block;
+  
+}
+
+.modal-categories, .modal-date {
+    display: inline-block;
+}
+
+.my-credits-title,.modal-credits{
+  display: inline-block;
 }
